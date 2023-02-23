@@ -1,19 +1,35 @@
-// {==================== Dependencies: Include External Modules ====================}
+/*
+ * Dependencies
+ * External Modules
+ */
 const path = require("path");
 const express = require("express");
 
-// {==================== Dependencies: Importing a local module ====================}
+/*
+ * Dependencies
+ * Local Modules
+ */
 const routes = require("./controllers");
+const sequelize = require("./config/connection");
 
-// {==================== Initialization ====================}
+/*
+ * Initialization
+ */
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// {==================== Middleware ====================}
+/*
+ * Middleware
+ */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
-// {==================== Synchronize All Models & Start Listening ====================}
-app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
+/*
+ * Start Listening
+ * Synchronize All Models
+ */
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
+});
