@@ -4,6 +4,7 @@
  */
 const path = require("path");
 const express = require("express");
+const exphbs = require("express-handlebars");
 
 /*
  * Dependencies
@@ -19,6 +20,14 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 /*
+ * MVC Template Engine
+ *  Handlebars as the default template engine
+ */
+const hbs = exphbs.create();
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
+/*
  * Middleware
  */
 app.use(express.json());
@@ -28,7 +37,7 @@ app.use(routes);
 
 /*
  * Start Listening
- * Synchronize All Models
+ * Synchronize Database
  */
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
