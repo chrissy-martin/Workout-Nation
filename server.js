@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3001;
 
 /*
  * MVC Template Engine
- *  Handlebars as the default template engine
+ * Handlebars as the default template engine
  */
 const hbs = exphbs.create();
 app.engine("handlebars", hbs.engine);
