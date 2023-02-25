@@ -5,6 +5,9 @@ router.get("/", async (req, res) => {
   res.render("homepage");
 });
 
+/* @ To Do
+ * change route name & change handlebars name...
+ */
 router.get("/dashboard", async (req, res) => {
   try {
     const taskData = await Task.findAll({
@@ -29,6 +32,17 @@ router.get("/dashboard", async (req, res) => {
     res.render("dashboard", {
       tasks,
     });
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
+/* @ To Do
+ * change route name & change handlebars name...
+ */
+router.get("/create-task-form", async (req, res) => {
+  try {
+    res.render("create-task-form");
   } catch (error) {
     res.status(500).json(err);
   }
