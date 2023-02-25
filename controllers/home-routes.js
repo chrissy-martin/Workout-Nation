@@ -60,4 +60,11 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+/* @ To Do
+ * change route name & change handlebars name...
+ */
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
 module.exports = router;
