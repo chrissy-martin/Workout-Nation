@@ -48,4 +48,16 @@ router.get("/create-task-form", async (req, res) => {
   }
 });
 
+/* @ To Do
+ * change route name & change handlebars name...
+ */
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
+});
+
 module.exports = router;

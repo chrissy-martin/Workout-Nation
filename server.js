@@ -5,6 +5,8 @@
 const path = require("path");
 const express = require("express");
 const exphbs = require("express-handlebars");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 /*
  * Dependencies
@@ -20,6 +22,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 /*
+ * Configure and link a session object with the sequelize store
+ */
+const sessOptions = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+/*
  * MVC Template Engine
  * Handlebars as the default template engine
  */
@@ -30,6 +45,7 @@ app.set("view engine", "handlebars");
 /*
  * Middleware
  */
+app.use(session(sessOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
