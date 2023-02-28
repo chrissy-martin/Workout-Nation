@@ -29,6 +29,8 @@ router.get("/dashboard", async (req, res) => {
         };
       });
 
+    // res.json(tasks);
+
     res.render("dashboard", {
       tasks,
     });

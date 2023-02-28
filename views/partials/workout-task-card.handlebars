@@ -7,13 +7,14 @@
     </div>
 </div> --}}
 
+
 {{#ifCond intensify "high"}}
 <div style="background-color: #ff726f;">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
     </div>
     <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
 </div>
 {{/ifCond}}
@@ -24,7 +25,7 @@
         <h2>{{taskname}} ({{intensify}})</h2>
     </div>
     <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
 </div>
 {{/ifCond}}
@@ -35,7 +36,7 @@
         <h2>{{taskname}} ({{intensify}})</h2>
     </div>
     <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
 </div>
 {{/ifCond}}
