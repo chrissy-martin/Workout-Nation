@@ -1,15 +1,19 @@
 const router = require("express").Router();
 const { User, Task } = require("../../models");
+const withAuth = require("../../utils/authenticator");
 
-router.post("/", async (req, res) => {
+/*
+ * POST [api/task]
+ * Creating workout task
+ * Authenticated user only
+ */
+router.post("/", withAuth, async (req, res) => {
   try {
     const taskData = await Task.create({
       taskname: req.body.taskName,
       intensify: req.body.intensifyVal,
-      /* @ To Do
-       * user_id from session...
-       */
-      //   user_id: req.session.user_id,
+      duration_minute: req.body.duration_minute,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(taskData);
