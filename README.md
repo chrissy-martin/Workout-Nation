@@ -28,4 +28,8 @@ At this time we would to formally introduce the team and break down the acknowle
 {determine license}
 
 ## Project Status
+<<<<<<< HEAD
 Currently this project is still in the early development stages. As we are still getting a grasp of the entirety of it all.
+=======
+Currently this project is still in the early development stages. As we are still getting a grasp of the entirety of it all.
+>>>>>>> 5aad8a849b8571a3414a0f32dcde8ecf1a70e07a
