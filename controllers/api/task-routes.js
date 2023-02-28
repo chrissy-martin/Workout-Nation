@@ -45,4 +45,60 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+/*
+ * PUT [api/task/setToFinish/:id]
+ * Update task
+ */
+router.put("/setToFinish/:id", withAuth, async (req, res) => {
+  try {
+    const task = await Task.update(
+      {
+        isFinished: true,
+      },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (task[0] === 0) {
+      res.status(404).json({ message: "error happened!" });
+      return;
+    }
+    res.status(200).json(task);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/*
+ * PUT [api/task/setToUnfinish/:id]
+ * Update task
+ */
+router.put("/setToUnfinish/:id", withAuth, async (req, res) => {
+  try {
+    const task = await Task.update(
+      {
+        isFinished: false,
+      },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (task[0] === 0) {
+      res.status(404).json({ message: "error happened!" });
+      return;
+    }
+    res.status(200).json(task);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
