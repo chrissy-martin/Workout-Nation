@@ -54,10 +54,11 @@ router.get("/testing", async (req, res) => {
 /* @ To Do
  * change route name & change handlebars name...
  */
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const taskData = await Task.findAll({
       include: [{ model: User }],
+      where: { user_id: req.session.user_id },
       order: [["date_created", "DESC"]],
     });
 
