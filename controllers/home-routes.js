@@ -2,10 +2,18 @@ const router = require("express").Router();
 const { User, Task } = require("../models");
 const withAuth = require("../utils/authenticator");
 
+/*
+ * Get [/]
+ * render homepage.handlebars
+ */
 router.get("/", async (req, res) => {
   res.render("homepage");
 });
 
+/*
+ * Get [/dashboard]
+ * render dashboard.handlebars
+ */
 /* @ To Do
  * change route name & change handlebars name...
  */
@@ -40,6 +48,10 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+/*
+ * Get [/create-task-form]
+ * render create-task-form.handlebars
+ */
 /* @ To Do
  * change route name & change handlebars name...
  */
@@ -51,6 +63,10 @@ router.get("/create-task-form", withAuth, async (req, res) => {
   }
 });
 
+/*
+ * Get [/login]
+ * render login.handlebars
+ */
 /* @ To Do
  * change route name & change handlebars name...
  */
@@ -63,6 +79,10 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+/*
+ * Get [/signup]
+ * render signup.handlebars
+ */
 /* @ To Do
  * change route name & change handlebars name...
  */

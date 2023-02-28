@@ -2,6 +2,11 @@ const router = require("express").Router();
 const { User, Task } = require("../../models");
 const withAuth = require("../../utils/authenticator");
 
+/*
+ * POST [api/task]
+ * Creating workout task
+ * Authenticated user only
+ */
 router.post("/", withAuth, async (req, res) => {
   try {
     const taskData = await Task.create({
