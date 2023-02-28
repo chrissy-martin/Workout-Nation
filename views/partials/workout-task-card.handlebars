@@ -9,7 +9,7 @@
 
 
 {{#ifCond intensify "high"}}
-<div style="background-color: #ff726f;">
+<div style="background-color: #ff726f;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -17,11 +17,13 @@
     <div>
         Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
+    <button id="setFinish">👌</button>
+    <button id="deleteTask">🗑️</button>
 </div>
 {{/ifCond}}
 
 {{#ifCond intensify "moderate"}}
-<div style="background-color: lightgreen;">
+<div style="background-color: lightgreen;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -29,11 +31,13 @@
     <div>
         Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
+    <button id="setFinish">👌</button>
+    <button id="deleteTask">🗑️</button>
 </div>
 {{/ifCond}}
 
 {{#ifCond intensify "low"}}
-<div style="background-color: lightblue;">
+<div style="background-color: lightblue;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -41,5 +45,7 @@
     <div>
         Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
     </div>
+    <button id="setFinish">👌</button>
+    <button id="deleteTask">🗑️</button>
 </div>
 {{/ifCond}}

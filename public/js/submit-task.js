@@ -24,7 +24,7 @@ const handleSubmit = async (evt) => {
     /* @ To Do
      * Redirect to where...
      */
-    document.location.replace("/");
+    document.location.replace("/dashboard");
   } else {
     console.log(response);
   }
