@@ -38,6 +38,7 @@ const sessOptions = {
 /*
  * MVC Template Engine
  * Handlebars as the default template engine
+ * Register Block Helpers #ifCond
  */
 const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);

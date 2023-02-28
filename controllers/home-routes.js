@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Task } = require("../models");
+const withAuth = require("../utils/authenticator");
 
 router.get("/", async (req, res) => {
   res.render("homepage");
@@ -42,7 +43,7 @@ router.get("/dashboard", async (req, res) => {
 /* @ To Do
  * change route name & change handlebars name...
  */
-router.get("/create-task-form", async (req, res) => {
+router.get("/create-task-form", withAuth, async (req, res) => {
   try {
     res.render("create-task-form");
   } catch (error) {
