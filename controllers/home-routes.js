@@ -11,6 +11,43 @@ router.get("/", async (req, res) => {
 });
 
 /*
+ * Get [/testing]
+ * render testing.handlebars
+ */
+router.get("/testing", async (req, res) => {
+  try {
+    const taskData = await Task.findAll({
+      include: [{ model: User }],
+      order: [["date_created", "DESC"]],
+    });
+
+    const tasks = taskData
+      .map((task) => task.get({ plain: true }))
+      .map((taskObj) => {
+        const intensifyMap = {
+          0: "low",
+          1: "moderate",
+          2: "high",
+        };
+        return {
+          ...taskObj,
+          intensify: intensifyMap[taskObj.intensify],
+        };
+      });
+
+    const userData = await User.findAll();
+    const users = userData.map((user) => user.get({ plain: true }));
+    // res.json(userData);
+    res.render("testing", {
+      tasks,
+      users,
+    });
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
+/*
  * Get [/dashboard]
  * render dashboard.handlebars
  */
