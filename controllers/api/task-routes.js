@@ -12,6 +12,7 @@ router.post("/", withAuth, async (req, res) => {
     const taskData = await Task.create({
       taskname: req.body.taskName,
       intensify: req.body.intensifyVal,
+      duration_minute: req.body.duration_minute,
       user_id: req.session.user_id,
     });
 
