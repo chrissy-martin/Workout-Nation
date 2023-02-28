@@ -1,4 +1,14 @@
-<div>
+{{!-- <div>
+    <div>
+        <h2>{{taskname}} ({{intensify}})</h2>
+    </div>
+    <div>
+        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+    </div>
+</div> --}}
+
+{{#ifCond intensify "high"}}
+<div style="background-color: #ff726f;">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
     </div>
@@ -6,3 +16,26 @@
         Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
     </div>
 </div>
+{{/ifCond}}
+
+{{#ifCond intensify "moderate"}}
+<div style="background-color: lightgreen;">
+    <div>
+        <h2>{{taskname}} ({{intensify}})</h2>
+    </div>
+    <div>
+        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+    </div>
+</div>
+{{/ifCond}}
+
+{{#ifCond intensify "low"}}
+<div style="background-color: lightblue;">
+    <div>
+        <h2>{{taskname}} ({{intensify}})</h2>
+    </div>
+    <div>
+        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
+    </div>
+</div>
+{{/ifCond}}

@@ -14,6 +14,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
  */
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
+const helpers = require("./utils/helpers");
 
 /*
  * Initialization
@@ -38,9 +39,16 @@ const sessOptions = {
  * MVC Template Engine
  * Handlebars as the default template engine
  */
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+
+hbs.handlebars.registerHelper("ifCond", function (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 /*
  * Middleware
