@@ -1,17 +1,9 @@
-// const { Task } = require("../../models");
-// import { Task } from "../../models";
-
+/* @ To Do
+ * change alert error message
+ */
 const handleSetFinish = async (evt) => {
   evt.preventDefault();
-
-  //   setFinishBtn = document.querySelector("#setFinish");
-  //   const taskId = setFinishBtn.parentElement.dataset.taskid;
-  //   const task = Task.findByPk(taskId);
-  //   task.isFinished = true;
-
-  //   const taskId = document.querySelector(".setFinish").parentElement.dataset.taskid;
   const taskId = evt.target.parentElement.dataset.taskid;
-  // Send a PUT request to the API endpoint
   const response = await fetch(`/api/task/setToFinish/${taskId}`, {
     method: "PUT",
     // body: JSON.stringify({ isFinished: true }),
@@ -21,14 +13,17 @@ const handleSetFinish = async (evt) => {
   if (response.ok) {
     document.location.replace(`/dashboard`);
   } else {
-    alert("Error");
+    // console.log(response);
+    alert(
+      "You already finished the task / You don't have permission to toggle this"
+    );
   }
 };
-
+/* @ To Do
+ * change alert error message
+ */
 const handleUndo = async (evt) => {
   evt.preventDefault();
-  //   const taskId = document.querySelector("#undo").parentElement.dataset.taskid;
-  //   const taskId = document.querySelector(".aTask").dataset.taskid;
   const taskId = evt.target.parentElement.dataset.taskid;
   const response = await fetch(`/api/task/setToUnfinish/${taskId}`, {
     method: "PUT",
@@ -38,13 +33,14 @@ const handleUndo = async (evt) => {
   if (response.ok) {
     document.location.replace(`/dashboard`);
   } else {
-    alert("Error");
+    alert(
+      "This task has not been finished / You don't have permission to toggle this"
+    );
   }
 };
 
 const handleDelete = async (evt) => {
   evt.preventDefault();
-  //   const id = document.querySelector(".aTask").dataset.taskid;
   //   console.log(evt.target.parentElement.dataset.taskid);
   const id = evt.target.parentElement.dataset.taskid;
   if (id) {
@@ -60,10 +56,6 @@ const handleDelete = async (evt) => {
     }
   }
 };
-
-// document.querySelector(".setFinish").addEventListener("click", handleSetFinish);
-// document.querySelector(".undo").addEventListener("click", handleUndo);
-// document.querySelector(".deleteTask").addEventListener("click", handleDelete);
 
 // Get all elements with the "setFinish" class
 const setFinishBtn = document.querySelectorAll(".setFinish");

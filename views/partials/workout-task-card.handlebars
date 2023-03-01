@@ -1,16 +1,14 @@
-{{!-- <div>
-    <div>
-        <h2>{{taskname}} ({{intensify}})</h2>
-    </div>
-    <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
-    </div>
-</div> --}}
-
+{{!-- /* @ To Do
+* change background-color and styles
+* change layout
+* change to card or something esle
+* change button
+* change from inline css style to class or id...
+*/ --}}
 {{!--==================== High ====================--}}
 {{#ifCond intensify "high"}}
 {{#if isFinished}}
-<div style="background-color: #f7b7bb;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #f7b7bb; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -56,7 +54,7 @@
 {{!--==================== Moderate ====================--}}
 {{#ifCond intensify "moderate"}}
 {{#if isFinished}}
-<div style="background-color: lightgreen;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: lightgreen; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -83,25 +81,11 @@
 </div>
 {{/if}}
 {{/ifCond}}
-{{!-- {{#ifCond intensify "moderate"}}
-<div style="background-color: lightgreen;" class="aTask" data-taskid="{{id}}">
-    <div>
-        <h2>{{taskname}} ({{intensify}})</h2>
-        <h2>Durition: {{duration_minute}} min</h2>
-    </div>
-    <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
-    </div>
-    <button id="setFinish">👌</button>
-    <button id="deleteTask">🗑️</button>
-</div>
-{{/ifCond}} --}}
 
 {{!--==================== Low ====================--}}
-
 {{#ifCond intensify "low"}}
 {{#if isFinished}}
-<div style="background-color: #D0ECEF;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #D0ECEF; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Durition: {{duration_minute}} min</h2>
@@ -128,32 +112,13 @@
 </div>
 {{/if}}
 {{/ifCond}}
-{{!-- {{#if isFinished}}
-<div style="background-color: #D0ECEF;" class="aTask" data-taskid="{{id}}">
+
+
+{{!-- <div>
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
-        <h2>Durition: {{duration_minute}} min</h2>
     </div>
     <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
+        Posted by <cite title="username">{{user.username}}</cite> on {{date_created}}
     </div>
-    <button id="setFinish">👌</button>
-    <button id="undo">↩️</button>
-    <button id="deleteTask">🗑️</button>
-</div>
-{{else}}
-{{#ifCond intensify "low"}}
-<div style="background-color: #2FADCC;" class="aTask" data-taskid="{{id}}">
-    <div>
-        <h2>{{taskname}} ({{intensify}})</h2>
-        <h2>Durition: {{duration_minute}} min</h2>
-    </div>
-    <div>
-        Posted by <cite title="username">{{user.username}}</cite> on {{format_date date_created}}
-    </div>
-    <button id="setFinish">👌</button>
-    <button id="undo">↩️</button>
-    <button id="deleteTask">🗑️</button>
-</div>
-{{/ifCond}}
-{{/if}} --}}
+</div> --}}
