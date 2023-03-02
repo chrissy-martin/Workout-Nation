@@ -76,10 +76,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
         };
       });
 
-    // res.json(tasks);
+    const userData = await User.findByPk(req.session.user_id);
+    const user = await userData.get({ plain: true });
 
     res.render("dashboard", {
       tasks,
+      user,
     });
   } catch (error) {
     res.status(500).json(err);

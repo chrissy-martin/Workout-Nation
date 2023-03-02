@@ -1,5 +1,12 @@
 <h1>Dashboard Works!</h1>
 
-{{#each tasks as |task| }}
-{{> workout-task-card}}
-{{/each}}
+<h1>Hi {{user.username}}</h1>
+<div class="row">
+    {{#each tasks as |task| }}
+    <div class="col">
+        {{> workout-task-card}}
+    </div>
+    {{/each}}
+</div>
+
+<script type="module" src="/js/modify-task.js"></script>
