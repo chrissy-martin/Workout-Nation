@@ -6,6 +6,11 @@ main {
 background-color: blue;
 }
 
+#profileImage {
+  border-radius: 50%;
+  width: 50%;
+}
+
 .title {
     
     display: flex;

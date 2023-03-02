@@ -29,6 +29,10 @@ Profile.init(
       type: DataTypes.FLOAT,
       allowNull: true,
     },
+    image_secure_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,

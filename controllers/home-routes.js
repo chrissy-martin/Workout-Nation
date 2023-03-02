@@ -84,7 +84,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       user,
     });
   } catch (error) {
-    res.status(500).json(err);
+    res.status(500).json(error);
   }
 });
 
@@ -142,7 +142,7 @@ router.get("/profile/form", (req, res) => {
  * Get [/profile/display]
  * render profile-display.handlebars
  */
-router.get("/profile/display", async (req, res) => {
+router.get("/profile/display", withAuth, async (req, res) => {
   try {
     const profileData = await Profile.findOne({
       include: [{ model: User }],
@@ -154,7 +154,7 @@ router.get("/profile/display", async (req, res) => {
       profile,
     });
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ message: "error happened" });
   }
 });
 
