@@ -2,6 +2,11 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
+/* @ To Do
+ * change the file name from user.js to User.js
+ * follow naming convention
+ * In local works fine but it will crash if deployed on cloud
+ */
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);

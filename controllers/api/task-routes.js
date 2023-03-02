@@ -47,7 +47,7 @@ router.delete("/:id", withAuth, async (req, res) => {
 
 /*
  * PUT [api/task/setToFinish/:id]
- * Update task
+ * Update task to finished
  */
 router.put("/setToFinish/:id", withAuth, async (req, res) => {
   try {
@@ -75,7 +75,7 @@ router.put("/setToFinish/:id", withAuth, async (req, res) => {
 
 /*
  * PUT [api/task/setToUnfinish/:id]
- * Update task
+ * Update task to un-finished
  */
 router.put("/setToUnfinish/:id", withAuth, async (req, res) => {
   try {
