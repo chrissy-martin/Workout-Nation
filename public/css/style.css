@@ -1,10 +1,45 @@
+.body {
+  background-image: linear-gradient(to right, rgb(251, 229, 184), rgb(240, 197, 116), rgb(249, 163, 3));
+}
+
+.homepage {
+  padding: 10px;
+  font-size: 20px;
+
+}
+
+.choices {
+  border-radius: 10px;
+  padding-right: 35px;
+}
+
+.btn-primary {
+  width: 12%
+}
+
+#submitBtn {
+  margin-top: 10px;
+}
+
+#logout {
+  border-radius: 10px;
+}
+
 .navbar {
-    background-color: lightblue;
+  background-image: linear-gradient(to left, rgb(251, 229, 184), rgb(240, 197, 116), rgb(249, 163, 3));
+}
+
+.wording {
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
 main {
 background-color: blue;
 }
+
+
 
 .title {
     
