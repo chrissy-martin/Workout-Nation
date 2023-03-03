@@ -1,6 +1,3 @@
-// const api_key = "562492553275237";
-// const cloud_name = "dyd46csac";
-
 handleSubmit = async (evt) => {
   evt.preventDefault();
 
@@ -86,6 +83,9 @@ handleUpdate = async (evt) => {
 
 document.querySelector("#submitBtn").addEventListener("click", handleSubmit);
 document.querySelector("#updateBtn").addEventListener("click", handleUpdate);
+
+// const api_key = "562492553275237";
+// const cloud_name = "dyd46csac";
 
 // const imageFile = document.querySelector("#file-field").files[0];
 

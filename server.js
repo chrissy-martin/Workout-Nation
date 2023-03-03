@@ -46,47 +46,6 @@ const cloudinaryConfig = cloudinary.config({
   api_key: process.env.CLOUDAPIKEY,
   api_secret: process.env.CLOUDINARYSECRET,
 });
-// app.get("/get-signature", (req, res) => {
-//   const timestamp = Math.round(new Date().getTime() / 1000);
-//   const signature = cloudinary.utils.api_sign_request(
-//     {
-//       timestamp: timestamp,
-//     },
-//     cloudinaryConfig.api_secret
-//   );
-//   res.json({ timestamp, signature });
-// });
-// app.post("upload/cloud", async (req, res) => {
-//   const file = req.imageUrl;
-//   const result = cloudinary.uploader.upload(
-//     "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg"
-//   );
-
-//   result
-//     .then((data) => {
-//       console.log(data);
-//       console.log(data.secure_url);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-//   // await cloudinary.uploader.upload(
-//   //   file,
-//   //   {
-//   //     resource_type: "auto",
-//   //     overwrite: true,
-//   //     invalidate: true,
-//   //   },
-//   //   (error, result) => {
-//   //     if (result && result.secure_url) {
-//   //       console.log(result.secure_url);
-//   //       return resolve(result.secure_url);
-//   //     }
-//   //     console.log(error.message);
-//   //     return reject({ message: error.message });
-//   //   }
-//   // );
-// });
 
 /*
  * MVC Template Engine
