@@ -30,13 +30,17 @@
   font-style: italic;
 }
 
-/* 
+.workout-nation {
+  font-size: 70px;
+}
+
+ 
 .aTask {
   border-radius: 10px;
   padding: 10px;
   color: antiquewhite;
   
-} */
+}
 
 .level-high {
   background-image: linear-gradient(to right, #434343 0%, black 100%);
