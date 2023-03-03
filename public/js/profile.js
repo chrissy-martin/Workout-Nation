@@ -6,7 +6,7 @@ handleSubmit = async (evt) => {
   const height = document.querySelector("#inputHight").value.trim();
   const imageUrl = document.querySelector("#inputImage").value.trim();
 
-  const cloudinaryResponse = await fetch(`/upload/cloud`, {
+  const cloudinaryResponse = await fetch(`/api/profile/upload/cloud`, {
     method: "POST",
     body: JSON.stringify({ imageUrl }),
     headers: { "Content-Type": "application/json" },
