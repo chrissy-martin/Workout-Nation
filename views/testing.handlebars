@@ -1,0 +1,12 @@
+{{#each tasks as |task| }}
+{{task.id}}
+{{> workout-task-card}}
+{{/each}}
+
+{{#each users as |user| }}
+<ul>
+    <li>{{user.id}} {{user.username}} {{user.email}} test1234</li>
+</ul>
+{{/each}}
+
+<script src="/js/modify-task.js"></script>

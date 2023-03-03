@@ -26,6 +26,10 @@ Task.init(
       allowNull: false,
       defaultValue: false,
     },
+    duration_minute: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,

@@ -2,6 +2,7 @@ const handleSubmit = async (evt) => {
   evt.preventDefault();
 
   const taskName = document.querySelector("#taskName").value.trim();
+  const duration_minute = document.querySelector("#time").value.trim();
   const intensify = document.querySelector(
     'input[name="inlineRadioOptions"]:checked'
   );
@@ -15,7 +16,7 @@ const handleSubmit = async (evt) => {
 
   const response = await fetch("/api/task", {
     method: "POST",
-    body: JSON.stringify({ taskName, intensifyVal }),
+    body: JSON.stringify({ taskName, intensifyVal, duration_minute }),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -23,7 +24,7 @@ const handleSubmit = async (evt) => {
     /* @ To Do
      * Redirect to where...
      */
-    document.location.replace("/");
+    document.location.replace("/dashboard");
   } else {
     console.log(response);
   }
