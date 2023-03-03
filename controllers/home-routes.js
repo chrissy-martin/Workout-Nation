@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Task } = require("../models");
+const { User, Task, Profile } = require("../models");
 const withAuth = require("../utils/authenticator");
 
 /*
@@ -43,7 +43,7 @@ router.get("/testing", async (req, res) => {
       users,
     });
   } catch (error) {
-    res.status(500).json(err);
+    res.status(500).json(error);
   }
 });
 
@@ -84,7 +84,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       user,
     });
   } catch (error) {
-    res.status(500).json(err);
+    res.status(500).json(error);
   }
 });
 
@@ -128,6 +128,34 @@ router.get("/login", (req, res) => {
  */
 router.get("/signup", (req, res) => {
   res.render("signup");
+});
+
+/*
+ * Get [/profile/form]
+ * render profile-form.handlebars
+ */
+router.get("/profile/form", (req, res) => {
+  res.render("profile-form");
+});
+
+/*
+ * Get [/profile/display]
+ * render profile-display.handlebars
+ */
+router.get("/profile/display", withAuth, async (req, res) => {
+  try {
+    const profileData = await Profile.findOne({
+      include: [{ model: User }],
+      where: { user_id: req.session.user_id },
+    });
+    const profile = profileData.get({ plain: true });
+    console.log(profile);
+    res.render("profile-display", {
+      profile,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "error happened" });
+  }
 });
 
 module.exports = router;

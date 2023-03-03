@@ -68,6 +68,15 @@ main {
 background-color: blue;
 }
 
+/* @ To Do
+  * change style
+  * image size and so on...
+*/
+#profileImage {
+  border-radius: 50%;
+  width: 50%;
+}
+
 
 
 .title {

@@ -7,6 +7,8 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const cloudinary = require("cloudinary").v2;
+const cors = require("cors");
 
 /*
  * Dependencies
@@ -15,6 +17,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
+// const { User, Task, Profile } = require("./models");
 
 /*
  * Initialization
@@ -36,6 +39,15 @@ const sessOptions = {
 };
 
 /*
+ * Configure for cloudinary
+ */
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: process.env.CLOUDNAME,
+  api_key: process.env.CLOUDAPIKEY,
+  api_secret: process.env.CLOUDINARYSECRET,
+});
+
+/*
  * MVC Template Engine
  * Handlebars as the default template engine
  * Register Block Helpers #ifCond
@@ -54,11 +66,26 @@ hbs.handlebars.registerHelper("ifCond", function (v1, v2, options) {
 /*
  * Middleware
  */
+app.use(cors());
 app.use(session(sessOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
+app.post("/upload/cloud", (req, res) => {
+  const file = req.body.imageUrl;
+  const result = cloudinary.uploader.upload(file);
+
+  result
+    .then((data) => {
+      console.log(data);
+      console.log(data.secure_url);
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 /*
  * Start Listening
