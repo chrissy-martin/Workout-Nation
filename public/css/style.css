@@ -36,14 +36,14 @@ background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
   padding: 10px;
   font-style: italic;
 }
-
+/* 
 .aTask {
   border-radius: 10px;
   padding: 10px;
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
   
   
-}
+} */
 
 
 
@@ -77,6 +77,36 @@ background-color: blue;
   width: 50%;
 }
 
+/* @ To Do
+  * change style
+  * 6 conditions for tasks
+*/
+#high-finished {
+  background-color: #f7b7bb;
+  text-decoration-line: line-through;
+}
+
+#high-unFinished {
+  background-color: #ff6b6b;
+}
+
+#moderate-finished {
+  background-color: lightgreen;
+  text-decoration-line: line-through;
+}
+
+#moderate-unFinished {
+  background-color: #2bb41a;
+}
+
+#low-finished {
+  background-color: #D0ECEF;
+  text-decoration-line: line-through;
+}
+
+#low-unFinished {
+  background-color: #2FADCC;
+}
 
 
 .title {
