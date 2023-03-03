@@ -15,7 +15,7 @@ const handleSetFinish = async (evt) => {
   } else {
     // console.log(response);
     alert(
-      "You already finished the task / You don't have permission to toggle this"
+      ""
     );
   }
 };

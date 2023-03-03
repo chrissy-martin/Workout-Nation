@@ -24,6 +24,16 @@ At this time, we are not looking for contributions to the project. We are excite
 ## Authors and Acknowledgement
 At this time we would to formally introduce the team and break down the acknowledgements of the work each person has presented and gifted this project. First it is always nice to work and develop skills with others, but working with each member has been truly rewarding.  
 
+
+Patrick Childers (https://github.com/Childy77) - Lead font-end
+
+Andrew (Sheng-Chu) Chou (https://github.com/Andrew-TechMaster) - Lead back-end
+
+Ashley Arena (https://github.com/aecarena) - Javascript extraordinaire
+
+Chrissy Martin (https://github.com/chrissy-martin) - Swing between front-end and back-end. Worked with and added the code for Passport.js. We are using Passport.js as our new middleware package (that hasn't been discussed in class) to implement authentication and authorization for our app. Worked on a little bit of the styling of the app and created the code for responsive design across different viewing platforms.
+
+
 ## License
 {determine license}
 
