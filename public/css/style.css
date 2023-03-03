@@ -40,21 +40,11 @@ background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
 .aTask {
   border-radius: 10px;
   padding: 10px;
-  color: antiquewhite;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  
   
 } */
 
-.level-high {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
-}
-
-.level-moderate {
-  background-image: linear-gradient(25deg,#d64c7f,#ee4758 50%);
-}
-
-.level-low {
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
-}
 
 
 .setFinish, .undo, .deleteTask {
@@ -92,37 +82,30 @@ background-color: blue;
   * 6 conditions for tasks
 */
 #high-finished {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-color: #f7b7bb;
   text-decoration-line: line-through;
-  color: wheat;
 }
 
 #high-unFinished {
-  background-image: linear-gradient(to right, #870000, #190a05);
-  color: wheat;
-  
+  background-color: #ff6b6b;
 }
 
 #moderate-finished {
-  background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+  background-color: lightgreen;
   text-decoration-line: line-through;
-  color: wheat;
 }
 
 #moderate-unFinished {
-  background-image: linear-gradient(to right, #870000, #190a05);
-  color: wheat;
+  background-color: #2bb41a;
 }
 
 #low-finished {
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  background-color: #D0ECEF;
   text-decoration-line: line-through;
-  color: wheat;
 }
 
 #low-unFinished {
-  background-image: linear-gradient(to right, #870000, #190a05);
-  color: wheat;
+  background-color: #2FADCC;
 }
 
 /* @ To Do End
@@ -140,12 +123,7 @@ background-color: blue;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-  
 
-}
-
-.workout-nation {
-  font-size: 70px;
 }
 
 .image {
