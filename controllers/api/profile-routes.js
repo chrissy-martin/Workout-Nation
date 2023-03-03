@@ -1,6 +1,16 @@
 const router = require("express").Router();
 const { Profile, User } = require("../../models");
 const withAuth = require("../../utils/authenticator");
+const cloudinary = require("cloudinary").v2;
+
+/*
+ * Configure for cloudinary
+ */
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: process.env.CLOUDNAME,
+  api_key: process.env.CLOUDAPIKEY,
+  api_secret: process.env.CLOUDINARYSECRET,
+});
 
 /*
  * POST [api/profile]
@@ -49,6 +59,26 @@ router.put("/", withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+/*
+ * PUT [api/profile/upload/cloud]
+ * Updating user profile
+ * Authenticated user only
+ */
+router.post("/upload/cloud", (req, res) => {
+  const file = req.body.imageUrl;
+  const result = cloudinary.uploader.upload(file);
+
+  result
+    .then((data) => {
+      console.log(data);
+      console.log(data.secure_url);
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;
