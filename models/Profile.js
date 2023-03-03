@@ -3,10 +3,6 @@ const sequelize = require("../config/connection");
 
 class Profile extends Model {}
 
-/* @ To Do
- * add profile image related...
- */
-
 Profile.init(
   {
     id: {

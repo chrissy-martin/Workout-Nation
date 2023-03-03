@@ -1,9 +1,27 @@
+{{!-- <h1>Profile-Display Works</h1> --}}
 {{!-- /* @ To Do
 * change style
 */
 --}}
+<div class="card text-center">
+    <div class="card-header">
+        <img class="card-img-top" id="profileImage" src="{{profile.image_secure_url}}" alt="Card image cap">
+        <h1>{{profile.user.username}}</h1>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Your Age: {{profile.age}}</h5>
+        <h5 class="card-title">Your Weight: {{profile.weight}} (pounds)</h5>
+        <h5 class="card-title">Your Height: {{profile.height}} (ft)</h5>
+        {{!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+    </div>
+    <div class="card-footer text-muted">
+        BMI (Body Mass Index): {{userBmi}}
+    </div>
+    <div class="card-footer text-muted">
+        <img class="card-img-bottom text-center" style="width:50%" src="/images/bmi.png">
+    </div>
+</div>
 
-{{!-- <h1>Profile-Display Works</h1> --}}
 
 {{!-- <h1>{{profile.age}} years old</h1>
 <h1>{{profile.weight}} pound</h1>
@@ -11,19 +29,3 @@
 <h1>name: {{profile.user.username}}</h1>
 <h1>image: </h1>
 <img id="profileImage" src="{{profile.image_secure_url}}"> --}}
-
-<div class="card text-center">
-    <div class="card-header">
-        {{profile.user.username}}
-    </div>
-    <img class="card-img-top" id="profileImage" src="{{profile.image_secure_url}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">age: {{profile.age}}</h5>
-        <h5 class="card-title">weight: {{profile.weight}} pound</h5>
-        <h5 class="card-title">height: {{profile.height}} ft</h5>
-        {{!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-    </div>
-    <div class="card-footer text-muted">
-        footer what ever you like or just delete it / bmi or sth...
-    </div>
-</div>

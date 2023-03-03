@@ -108,8 +108,20 @@ router.get("/profile/display", withAuth, async (req, res) => {
     });
     const profile = profileData.get({ plain: true });
     console.log(profile);
+
+    function calculateBMI(weight, height) {
+      // Convert height from feet to inches
+      height = height * 12;
+      // Calculate BMI
+      const bmi = (weight / (height * height)) * 703;
+      // Round to two decimal places
+      return bmi.toFixed(2);
+    }
+    const userBmi = calculateBMI(profile.weight, profile.height);
+
     res.render("profile-display", {
       profile,
+      userBmi,
       isLoggedIn: req.session.logged_in,
     });
   } catch (error) {

@@ -13,9 +13,6 @@ handleSubmit = async (evt) => {
     });
 
     if (response.ok) {
-      /* @ To Do
-       * Redirect to where...
-       */
       document.location.replace("/dashboard");
     } else {
       alert("Failed to sign up.");
