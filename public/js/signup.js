@@ -16,7 +16,7 @@ handleSubmit = async (evt) => {
       /* @ To Do
        * Redirect to where...
        */
-      document.location.replace("/");
+      document.location.replace("/userdashboard");
     } else {
       alert("Failed to sign up.");
     }
