@@ -13,4 +13,12 @@ module.exports = {
     const result = `${month}/${day}/${year}`;
     return result;
   },
+  format_date_onlyHourMin: (date) => {
+    // var seconds = date.getSeconds();
+    var minutes = date.getMinutes();
+    var hour = date.getHours();
+
+    const result = `${hour}:${minutes}`;
+    return result;
+  },
 };

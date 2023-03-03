@@ -3,7 +3,8 @@
  */
 const handleSetFinish = async (evt) => {
   evt.preventDefault();
-  const taskId = evt.target.parentElement.dataset.taskid;
+  // const taskId = evt.target.parentElement.dataset.taskid;
+  const taskId = evt.target.parentElement.parentElement.dataset.taskid;
   const response = await fetch(`/api/task/setToFinish/${taskId}`, {
     method: "PUT",
     // body: JSON.stringify({ isFinished: true }),
@@ -14,9 +15,7 @@ const handleSetFinish = async (evt) => {
     document.location.replace(`/dashboard`);
   } else {
     // console.log(response);
-    alert(
-      ""
-    );
+    alert("You already finished the task");
   }
 };
 /* @ To Do
@@ -24,7 +23,8 @@ const handleSetFinish = async (evt) => {
  */
 const handleUndo = async (evt) => {
   evt.preventDefault();
-  const taskId = evt.target.parentElement.dataset.taskid;
+  // const taskId = evt.target.parentElement.dataset.taskid;
+  const taskId = evt.target.parentElement.parentElement.dataset.taskid;
   const response = await fetch(`/api/task/setToUnfinish/${taskId}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -42,9 +42,10 @@ const handleUndo = async (evt) => {
 const handleDelete = async (evt) => {
   evt.preventDefault();
   //   console.log(evt.target.parentElement.dataset.taskid);
-  const id = evt.target.parentElement.dataset.taskid;
-  if (id) {
-    const response = await fetch(`/api/task/${id}`, {
+  // const id = evt.target.parentElement.dataset.taskid;
+  const taskId = evt.target.parentElement.parentElement.dataset.taskid;
+  if (taskId) {
+    const response = await fetch(`/api/task/${taskId}`, {
       method: "DELETE",
     });
 

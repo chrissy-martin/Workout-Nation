@@ -7,6 +7,24 @@
 */ --}}
 {{!--==================== High ====================--}}
 {{#ifCond intensify "high"}}
+<div class="card text-center aTask" {{#if isFinished}} id="high-finished" {{else}} id="high-unFinished" {{/if}}
+    data-taskid="{{id}}">
+    <div class="card-header">
+        <h4>{{taskname}}</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Intensify: {{intensify}}</h5>
+        <h5 class="card-subtitle mb-2 text-muted"> Durition: {{duration_minute}} min</h5>
+        <button class="setFinish btn-success">👌</button>
+        <button class="undo btn-info">↩️</button>
+        <button class="deleteTask btn-danger">🗑️</button>
+    </div>
+    <div class="card-footer text-muted">
+        <h6>Created at: {{format_date_onlyHourMin date_created}}</h6>
+    </div>
+</div>
+{{/ifCond}}
+{{!-- {{#ifCond intensify "high"}}
 <div {{#if isFinished}} id="high-finished" {{else}} id="high-unFinished" {{/if}} class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
@@ -19,10 +37,28 @@
     <button class="undo">↩️</button>
     <button class="deleteTask">🗑️</button>
 </div>
-{{/ifCond}}
+{{/ifCond}} --}}
 
 {{!--==================== Moderate ====================--}}
 {{#ifCond intensify "moderate"}}
+<div class="card text-center aTask" {{#if isFinished}} id="moderate-finished" {{else}} id="moderate-unFinished" {{/if}}
+    data-taskid="{{id}}">
+    <div class="card-header">
+        <h4>{{taskname}}</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Intensify: {{intensify}}</h5>
+        <h5 class="card-subtitle mb-2 text-muted"> Durition: {{duration_minute}} min</h5>
+        <button class="setFinish btn-success">Finish👌</button>
+        <button class="undo btn-info">Undo↩️</button>
+        <button class="deleteTask btn-danger">Delete🗑️</button>
+    </div>
+    <div class="card-footer text-muted">
+        <h6>Created at: {{format_date_onlyHourMin date_created}}</h6>
+    </div>
+</div>
+{{/ifCond}}
+{{!-- {{#ifCond intensify "moderate"}}
 <div {{#if isFinished}} id="moderate-finished" {{else}} id="moderate-unFinished" {{/if}} class="aTask"
     data-taskid="{{id}}">
     <div>
@@ -36,10 +72,25 @@
     <button class="undo">↩️</button>
     <button class="deleteTask">🗑️</button>
 </div>
-{{/ifCond}}
+{{/ifCond}} --}}
 
 {{!--==================== Low ====================--}}
 {{#ifCond intensify "low"}}
+<div class="card text-center aTask" {{#if isFinished}} id="low-finished" {{else}} id="low-unFinished" {{/if}}
+    data-taskid="{{id}}">
+    <div class="card-body">
+        <h5 class="card-title">{{taskname}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{intensify}}</h6>
+        <button class="setFinish btn-success">Finish</button>
+        <button class="undo btn-info">Undo</button>
+        <button class="deleteTask btn-danger">Delete</button>
+    </div>
+    <div class="card-footer text-muted">
+        {{duration_minute}} min
+    </div>
+</div>
+{{/ifCond}}
+{{!-- {{#ifCond intensify "low"}}
 <div {{#if isFinished}} id="low-finished" {{else}} id="low-unFinished" {{/if}} class="aTask" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
@@ -52,4 +103,4 @@
     <button class="undo">↩️</button>
     <button class="deleteTask">🗑️</button>
 </div>
-{{/ifCond}}
+{{/ifCond}} --}}
