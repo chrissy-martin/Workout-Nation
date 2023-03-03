@@ -8,7 +8,7 @@
 {{!--==================== High ====================--}}
 {{#ifCond intensify "high"}}
 {{#if isFinished}}
-<div style="background-color: #f7b7bb; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #f7b7bb; text-decoration-line: line-through;" class="aTask level-high" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
@@ -21,7 +21,7 @@
     <button class="deleteTask">🗑️</button>
 </div>
 {{else}}
-<div style="background-color: #ff6b6b;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #ff6b6b;" class="aTask level-high"  data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
@@ -56,7 +56,7 @@
 {{!--==================== Moderate ====================--}}
 {{#ifCond intensify "moderate"}}
 {{#if isFinished}}
-<div style="background-color: lightgreen; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: lightgreen; text-decoration-line: line-through;" class="aTask level-moderate" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
@@ -69,7 +69,7 @@
     <button class="deleteTask">🗑️</button>
 </div>
 {{else}}
-<div style="background-color: #2bb41a;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #2bb41a;" class="aTask level-moderate" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
@@ -87,7 +87,7 @@
 {{!--==================== Low ====================--}}
 {{#ifCond intensify "low"}}
 {{#if isFinished}}
-<div style="background-color: #D0ECEF; text-decoration-line: line-through;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #D0ECEF; text-decoration-line: line-through;" class="aTask level-low" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
@@ -100,7 +100,7 @@
     <button class="deleteTask">🗑️</button>
 </div>
 {{else}}
-<div style="background-color: #2FADCC;" class="aTask" data-taskid="{{id}}">
+<div style="background-color: #2FADCC;" class="aTask level-low" data-taskid="{{id}}">
     <div>
         <h2>{{taskname}} ({{intensify}})</h2>
         <h2>Duration: {{duration_minute}} min</h2>
