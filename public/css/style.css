@@ -36,13 +36,13 @@ background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
   padding: 10px;
   font-style: italic;
 }
-
+/* 
 .aTask {
   border-radius: 10px;
   padding: 10px;
   color: antiquewhite;
   
-}
+} */
 
 .level-high {
   background-image: linear-gradient(to right, #434343 0%, black 100%);
@@ -78,7 +78,57 @@ main {
 background-color: blue;
 }
 
+/* @ To Do
+  * change style
+  * image size and so on...
+*/
+#profileImage {
+  border-radius: 50%;
+  width: 50%;
+}
 
+/* @ To Do
+  * change style
+  * 6 conditions for tasks
+*/
+#high-finished {
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  text-decoration-line: line-through;
+  color: wheat;
+}
+
+#high-unFinished {
+  background-image: linear-gradient(to right, #870000, #190a05);
+  color: wheat;
+  
+}
+
+#moderate-finished {
+  background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+  text-decoration-line: line-through;
+  color: wheat;
+}
+
+#moderate-unFinished {
+  background-image: linear-gradient(to right, #870000, #190a05);
+  color: wheat;
+}
+
+#low-finished {
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  text-decoration-line: line-through;
+  color: wheat;
+}
+
+#low-unFinished {
+  background-image: linear-gradient(to right, #870000, #190a05);
+  color: wheat;
+}
+
+/* @ To Do End
+  * change style
+  * 6 conditions for tasks
+*/
 
 .title {
     

@@ -1,5 +1,6 @@
 const seedUser = require("./user-seeds");
 const seedTask = require("./task-seeds");
+const seedProfile = require("./profile-seeds");
 
 const sequelize = require("../config/connection");
 
@@ -12,6 +13,9 @@ const seedAll = async () => {
 
   await seedTask();
   console.log("\n----- POSTS SEEDED -----\n");
+
+  await seedProfile();
+  console.log("\n----- PROFILES SEEDED -----\n");
 
   process.exit(0);
 };

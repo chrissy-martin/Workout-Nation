@@ -7,6 +7,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const cors = require("cors");
 
 /*
  * Dependencies
@@ -43,7 +44,6 @@ const sessOptions = {
 const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
 hbs.handlebars.registerHelper("ifCond", function (v1, v2, options) {
   if (v1 === v2) {
     return options.fn(this);
@@ -54,6 +54,7 @@ hbs.handlebars.registerHelper("ifCond", function (v1, v2, options) {
 /*
  * Middleware
  */
+app.use(cors());
 app.use(session(sessOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
