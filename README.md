@@ -7,12 +7,12 @@ This is a group project for a coding bootcamp to demonstrate the collective know
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Visuals
-![alt text](homepage.jpg)
-![alt text](login.jpg)
-![alt text](signup.jpg)
-![alt text](profile_input.jpg)
-![alt text](dashboard.jpg)
-![alt text](workout_input.jpg)
+![alt text](/public/images/homepage.jpg)
+![alt text](/public/images/login.jpg)
+![alt text](/public/images/signup.jpg)
+![alt text](/public/images/profile_input.jpg)
+![alt text](/public/images/dashboard.jpg)
+![alt text](/public/images/workout_input.jpg)
 
 ## Installation
 Here is a quick documentation for deploying an app on Heroku:
