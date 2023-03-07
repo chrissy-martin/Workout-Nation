@@ -16,22 +16,36 @@ This is a group project for a coding bootcamp to demonstrate the collective know
 
 ## Installation
 Here is a quick documentation for deploying an app on Heroku:
+
 Step 1: Type “heroku create” in your local main branch.
+
 Step 1.5: Sometimes it may prompt you to press any key, after which it will redirect you to the login process.
+
 Step 2: Type “git push heroku main” in the command line to push your code to Heroku.
+
 Step 3: Go to Heroku and find your application. Click on it to enter.
+
 Step 4: In the “Resources” dashboard, search for “JawsDB MySQL”.
+
 Step 5: Create an account in Cloudinary by visiting their website at https://cloudinary.com/users/register_free#gsc.tab=0.
+
 Step 6: Your environment variables can be found in the following image.
+
 Step 7: Use the following command line, but replace the values with your own Cloudinary API credentials obtained in Step 6.
+
 heroku config:set CLOUDINARY_CLOUD_NAME=your-cloud-name
+
 heroku config:set CLOUDINARY_API_KEY=your-api-key
+
 heroku config:set CLOUDINARY_API_SECRET=your-api-secret
+
 cloudinary.comcloudinary.com
+
 Cloudinary
 
 ## Usage
-The designed usage of this app would be for daily workout tracking. 
+The designed usage of this app would be for daily workout tracking. You can find the deployed Heroku app here: https://boiling-dusk-37737.herokuapp.com/
+For the GitHub repository, click here: https://github.com/chrissy-martin/Workout-Nation
 
 ## Roadmap
 Collectively future development of project would have ability for users to add friends and be able to message back and forth. Another addition would be completing achievements and being able to compete with friends on challenges. When users are at their dashboard they would see their progress, completed challenges and their achievements. Future versions would have tutorials for a wider variety of workouts to include but not limited to step-by-step photos or videos. The ability to share recipes, track more physical aspects, along with section for more detailed comments on your workout and a section for future fitness goal planning.
